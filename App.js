@@ -2,7 +2,7 @@ import * as React from 'react';
 import {  View, StyleSheet ,ScrollView} from 'react-native';
 import { Constants } from 'expo';
 
-// You can import from local files
+
 import ImageView from './components/ImageView';
 
 
@@ -32,7 +32,7 @@ export default class App extends React.Component {
           console.log(error);
         });
 
-        console.log(this.state.images);
+        
 
   }
   render() {
