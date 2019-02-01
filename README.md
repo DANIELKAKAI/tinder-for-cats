@@ -3,6 +3,13 @@
 In this project I've created a react native app which can be used to like and dislike cat 
 images.<br/>
 expo.io link: https://snack.expo.io/@danielkakai/tinder-for-cats 
+<br/>
+
+## Screenshot
+![alt text](https://drive.google.com/open?id=1KiYXLuogL7Tv-kFarTkBOeowLPZB-CAJ)
+
+## Qr code
+![alt text](https://drive.google.com/open?id=1HL0WfMORV27xwpL6SDDngPd3Ux5-qpl0)
 
 ## How it works
 <br/>
@@ -32,7 +39,7 @@ componentWillMount() {
 
 ```
 
-### displaying the images
+### Displaying the images
 the images are displayed using the `ImageView` component
 ```javascript
 <View style={styles.container}>
@@ -48,7 +55,7 @@ the images are displayed using the `ImageView` component
         </ScrollView>
 </View>
 ```
-### saving likes and dislikes using AsyncStorage
+### Saving likes and dislikes using AsyncStorage
 Using AsyncStorage likes and dislikes are saved depending on the button pressed, image id used as the key with a value of either like or dislike
 ```javascript
 
