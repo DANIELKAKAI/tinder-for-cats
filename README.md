@@ -6,10 +6,10 @@ expo.io link: https://snack.expo.io/@danielkakai/tinder-for-cats
 <br/>
 
 ## Screenshot
-![alt text](https://drive.google.com/open?id=1KiYXLuogL7Tv-kFarTkBOeowLPZB-CAJ)
+![images](https://github.com/DANIELKAKAI/tinder-for-cats/blob/master/images/Screenshot_20190201-174805.png)
 
 ## Qr code
-![alt text](https://drive.google.com/open?id=1HL0WfMORV27xwpL6SDDngPd3Ux5-qpl0)
+![qr code](https://github.com/DANIELKAKAI/tinder-for-cats/blob/master/images/qr%20code.png)
 
 ## How it works
 <br/>
