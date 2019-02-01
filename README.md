@@ -1,13 +1,67 @@
-# Sample Snack app
+# Tinder for cats
 
-Welcome to Expo!
+In this project I've created a react native app which can be used to like and dislike cat 
+images.<br/>
+expo.io link: https://snack.expo.io/@danielkakai/tinder-for-cats 
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by clicking the **Run** button or use the simulator by clicking **Tap to Play**. When you're done, click **Save** and share the link!
+## How it works
+<br/>
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Export** your project and use it with [expo-cli](https://docs.expo.io/versions/latest/introduction/installation.html).
+### Fetching cat images
+Cat images are fetched using cats api then the state is updated in the `App.js` file.
+```javascript
 
-Projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the **Embed** button.
+componentWillMount() {
+    fetch('https://api.thecatapi.com/v1/images/search?limit=10', {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization':'4a9d00a0-2063-4f7f-a56e-00e73f7da42e'
+      },
+    }).then(res => res.json())
+      .then((result) => {
+        this.setState({
+          images: result
+        })
+      },
+        (error) => {
+          console.log(error);
+        });    
+  }
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.io).
+```
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack-web).
+### displaying the images
+the images are displayed using the `ImageView` component
+```javascript
+<View style={styles.container}>
+
+        <ScrollView style={styles.scroller}>
+                    {
+                        this.state.images.map((item, index) => (
+
+                        <ImageView uri={item.url} id={item.id}/>
+
+                    ))
+                }
+        </ScrollView>
+</View>
+```
+### saving likes and dislikes using AsyncStorage
+Using AsyncStorage likes and dislikes are saved depending on the button pressed, image id used as the key with a value of either like or dislike
+```javascript
+
+ Like(id){
+        let key =  id;
+        AsyncStorage.setItem(key,'like');
+        this.setState({status:'liked'});
+    }
+
+    disLike(id){
+        let key =  id;
+        AsyncStorage.setItem(key,'dislike');
+        this.setState({status:'disliked'});
+    }
+
+```
